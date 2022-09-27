@@ -1,15 +1,15 @@
 from math import floor
 
-n = int(input("Введите число: "))
+n = int(input("Введите число: "))#запрашиваем  число
 factor = 2
-result = []
-if n < 2:
+result = []#присваиваем рузультату список простых множителей, первоначально пустой
+if n < 2:#если введенное число меньше 2. то выводится сообщение об ошибке
     print("Ошибка")
-else:
-    while factor <= n:
-        if n % factor == 0:
-            result.append(factor)
-            n = floor(n / factor)
+else:#если введенное число больше 2
+    while factor <= n:#цикл выполняется пока выполняется условие
+        if n % factor == 0:#если остаток от деления равен 0
+            result.append(factor)#добавлям в конец списка значение
+            n = floor(n / factor)#округляем в меньшую сторону результат деления
         else:
-            factor += 1
+            factor += 1#если остаток от деления не равен 0, увеличиваем значение factor на 1
     print(result)
